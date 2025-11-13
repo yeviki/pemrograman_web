@@ -30,7 +30,7 @@ Repository ini berisi **materi TUWEB (Tutorial Web)** lengkap untuk mata kuliah 
 
 ---
 
-## Vue 3 Data Binding Demo
+## Vue 3 : Data Binding Demo
 
 ### - 1️⃣ One-way data binding
 ### - 2️⃣ Two-way data binding
