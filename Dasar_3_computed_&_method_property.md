@@ -112,6 +112,7 @@ computed digunakan untuk mengolah data secara otomatis (reaktif).
 Jika firstName atau lastName berubah, maka fullName akan ikut berubah tanpa dipanggil ulang secara manual.
 
 Computed bersifat cache (disimpan sementara), jadi tidak dieksekusi ulang kecuali data yang dipakainya berubah.
+---
 
 ### ⚙️ 2. Menggunakan methods Property
 
@@ -160,6 +161,7 @@ methods berisi fungsi biasa yang dijalankan saat dipanggil ({{ getFullName() }})
 Setiap kali Vue merender ulang DOM, fungsi ini akan selalu dieksekusi ulang, meskipun datanya belum berubah.
 
 methods cocok digunakan untuk aksi/event seperti klik tombol atau proses data satu kali.
+---
 
 ### ⚖️ 3. Perbedaan computed vs methods
 Aspek	Computed Property	Methods Property
@@ -204,9 +206,17 @@ createApp({
 }).mount("#app");
 </script>
 ```
+---
 
 ### 🧩 Amati console browser
 
 Saat mengetik di input, computed hanya dieksekusi jika datanya berubah.
 
 Sedangkan methods selalu dijalankan ulang setiap kali halaman dirender ulang.
+---
+
+### 🧭 Kesimpulan
+
+Gunakan computed jika kamu ingin menampilkan hasil perhitungan berdasarkan data yang berubah.
+
+Gunakan methods jika kamu ingin menjalankan logika atau aksi berdasarkan interaksi pengguna.
