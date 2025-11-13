@@ -25,7 +25,7 @@ Repository ini berisi **materi TUWEB (Tutorial Web)** lengkap untuk mata kuliah 
     1. Universitas Putra Indonesia YTPK Padang, Sistem Informasi, Fakultas Ilmu Komputer
     2. Universitas Terbuka
 - **🎯 Target Audience:** Mahasiswa tingkat pemula
-- **⏰ Total Durasi:** 360 menit (6 jam)
+- **⏰ Total Durasi:** 240 menit (4 jam)
 - **📈 Difficulty Level:** Progressive (Basic → Advanced)
 
 ---
