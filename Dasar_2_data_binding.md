@@ -143,11 +143,11 @@ button:hover {
 
 ### 🧠 Penjelasan:
 
-    One-way artinya data hanya mengalir dari script ke tampilan (view).
-    
-    Jika kita mengubah name atau age dari kode (bukan dari input user), tampilan otomatis ikut berubah.
-    
-    Tapi user tidak bisa langsung mengubah data di layar, karena tidak ada input form yang mengikat datanya.
+- One-way artinya data hanya mengalir dari script ke tampilan (view).
+
+- Jika kita mengubah name atau age dari kode (bukan dari input user), tampilan otomatis ikut berubah.
+
+- Tapi user tidak bisa langsung mengubah data di layar, karena tidak ada input form yang mengikat datanya.
 ---
 
 ## 🧩 3. Two-Way Data Binding (v-model)
@@ -189,13 +189,13 @@ input {
 
 ### 🧠 Penjelasan:
 
-    v-model menghubungkan variabel name dengan input teks.
-    
-    Saat user mengetik di input, nilai name langsung berubah.
-    
-    Saat nilai name diubah lewat script, isi input juga ikut berubah.
-    
-    Ini disebut two-way data binding karena data dan tampilan saling terhubung dua arah.
+- v-model menghubungkan variabel name dengan input teks.
+
+- Saat user mengetik di input, nilai name langsung berubah.
+
+- Saat nilai name diubah lewat script, isi input juga ikut berubah.
+
+- Ini disebut two-way data binding karena data dan tampilan saling terhubung dua arah.
 ---
 
 ## 🧩 4. Directive v-bind
@@ -246,14 +246,14 @@ button:hover {
 
 ### 🧠 Penjelasan:
 
-    v-bind digunakan untuk mengikat atribut HTML dengan variabel data.
-    
-    Bentuk singkatnya adalah :attribute.
-    
-    Contoh: :style="{ color: textColor }"
+- v-bind digunakan untuk mengikat atribut HTML dengan variabel data.
+
+- Bentuk singkatnya adalah :attribute.
+
+    - Contoh: :style="{ color: textColor }"
     → mengubah warna teks berdasarkan nilai variabel textColor.
-    
-    Saat textColor berubah, gaya HTML langsung diperbarui otomatis.
+
+- Saat textColor berubah, gaya HTML langsung diperbarui otomatis.
 ---
 
 ## 🧩 5. Directive v-model (Form Lengkap)
@@ -320,15 +320,15 @@ pre {
 
 ### 🧠 Penjelasan:
 
-    v-model bisa digunakan untuk semua elemen form:
+- v-model bisa digunakan untuk semua elemen form:
+
+    - input teks → data string
     
-    input teks → data string
+    - select → data pilihan
     
-    select → data pilihan
-    
-    checkbox → data boolean
-    
-    Kita menggunakan reactive() agar form bisa menyimpan banyak field dalam satu objek.
+    - checkbox → data boolean
+
+- Kita menggunakan reactive() agar form bisa menyimpan banyak field dalam satu objek.
 ---
 
 ## 🧩 6. Gabungkan Semua di App.vue
@@ -384,8 +384,10 @@ Akses di browser:
 ```
 
 ## 🧠 8. Ringkasan Materi
-Konsep	Directive	Deskripsi
-One-Way Binding	{{ }}	Menampilkan data dari script ke HTML (satu arah)
-Two-Way Binding	v-model	Menghubungkan data dengan input form (dua arah)
-v-bind	:attribute	Mengikat atribut HTML dengan data variabel
-v-model (form)	v-model="form.nama"	Sinkronisasi input, select, checkbox ke variabel data
+| Konsep              | Directive             | Deskripsi                                             |
+| ------------------- | --------------------- | ----------------------------------------------------- |
+| **One-Way Binding** | `{{ }}`               | Menampilkan data dari script ke HTML (satu arah)      |
+| **Two-Way Binding** | `v-model`             | Menghubungkan data dengan input form (dua arah)       |
+| **v-bind**          | `:attribute`          | Mengikat atribut HTML dengan data variabel            |
+| **v-model (form)**  | `v-model="form.nama"` | Sinkronisasi input, select, checkbox ke variabel data |
+
