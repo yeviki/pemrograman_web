@@ -31,7 +31,7 @@ Repository ini berisi **materi TUWEB (Tutorial Web)** lengkap untuk mata kuliah 
 ---
 
 
-🧩 1. Pastikan Prasyarat Terpasang
+## 🧩 1. Pastikan Prasyarat Terpasang
 
 Pastikan kamu sudah punya di komputer kamu:
 
@@ -50,17 +50,18 @@ npm -v
 Kalau belum ada, install Node.js dari situs resmi:
 🔗 https://nodejs.org
 
-⚙️ 2. Buat Proyek Baru Vue 3
+## ⚙️ 2. Buat Proyek Baru Vue 3
 
 Gunakan perintah bawaan dari Vite:
-
+```bash
 npm create vue@latest
+```
 
 
 Jika kamu pertama kali menjalankannya, npm akan menanyakan beberapa pilihan.
 
 Kamu akan ditanya beberapa hal, misalnya:
-
+```bash
 ✔ Project name: … my-vue-app
 ✔ Add TypeScript? … No
 ✔ Add JSX Support? … No
@@ -69,33 +70,38 @@ Kamu akan ditanya beberapa hal, misalnya:
 ✔ Add Vitest for Unit Testing? … No
 ✔ Add ESLint for code quality? … Yes
 ✔ Add Prettier for code formatting? … Yes
-
+```
 
 Setelah itu, perintah akan otomatis membuat folder my-vue-app.
 
-📦 3. Masuk ke Folder Proyek
+## 📦 3. Masuk ke Folder Proyek
+```bash
 cd my-vue-app
-
+```
 
 Lalu install dependensi:
 
+```bash
 npm install
+```
 
-🚀 4. Jalankan Proyek Vue 3
+## 🚀 4. Jalankan Proyek Vue 3
+```bash
 npm run dev
+```
 
 
 Kemudian buka link yang muncul, biasanya:
-
+```bash
 http://localhost:5173/
-
+```
 
 Kalau tampil tulisan "Hello Vue 3", berarti berhasil 🎉
 
-🧱 5. Struktur Folder Dasar
+## 🧱 5. Struktur Folder Dasar
 
 Struktur default proyek Vue 3 (Vite) biasanya seperti ini:
-
+```bash
 my-vue-app/
 ├─ node_modules/
 ├─ public/
@@ -109,10 +115,10 @@ my-vue-app/
 ├─ index.html
 ├─ package.json
 ├─ vite.config.js
-
+```
 
 Penjelasan singkat:
-
+```bash
 src/main.js → titik masuk aplikasi
 
 src/App.vue → komponen utama
@@ -120,11 +126,12 @@ src/App.vue → komponen utama
 src/components/ → tempat komponen buatanmu
 
 index.html → halaman utama
+```
 
-🎨 6. Mulai Koding
+## 🎨 6. Mulai Koding
 
 Contoh isi App.vue sederhana:
-
+```bash
 <template>
   <h1>{{ message }}</h1>
   <button @click="count++">Klik {{ count }}</button>
@@ -145,8 +152,9 @@ button {
   margin-top: 10px;
 }
 </style>
+```
 
-🧰 7. (Opsional) Install Extension
+## 🧰 7. (Opsional) Install Extension
 
 Kalau kamu pakai VS Code, install:
 
