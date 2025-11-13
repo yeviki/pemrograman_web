@@ -41,7 +41,7 @@ Struktur dan gaya penjelasan tetap seperti modul sebelumnya agar mahasiswa bisa 
 🧩 Vue 3 : Penggunaan Property dalam Vue.js
 🎯 Tujuan Pembelajaran
 
-Setelah mempelajari modul ini, mahasiswa dapat:
+Setelah mempelajari ini, mahasiswa dapat:
 
 ### - 1️⃣ Menggunakan computed property untuk memproses data secara reaktif.
 
@@ -52,7 +52,7 @@ Setelah mempelajari modul ini, mahasiswa dapat:
 
 ## 🏗️ Persiapan Project
 
-Kita lanjut dari project sebelumnya atau buat project baru dengan struktur berikut:
+Kita lanjut dari project sebelumnya atau buat project baru dengan struktur berikut :
 ```bash
 vue-properties/
 ├── index.html
@@ -112,6 +112,7 @@ computed digunakan untuk mengolah data secara otomatis (reaktif).
 Jika firstName atau lastName berubah, maka fullName akan ikut berubah tanpa dipanggil ulang secara manual.
 
 Computed bersifat cache (disimpan sementara), jadi tidak dieksekusi ulang kecuali data yang dipakainya berubah.
+
 ---
 
 ### ⚙️ 2. Menggunakan methods Property
@@ -161,14 +162,17 @@ methods berisi fungsi biasa yang dijalankan saat dipanggil ({{ getFullName() }})
 Setiap kali Vue merender ulang DOM, fungsi ini akan selalu dieksekusi ulang, meskipun datanya belum berubah.
 
 methods cocok digunakan untuk aksi/event seperti klik tombol atau proses data satu kali.
+
 ---
 
 ### ⚖️ 3. Perbedaan computed vs methods
-Aspek	Computed Property	Methods Property
-Sifat	Reaktif & memiliki cache	Dipanggil setiap kali dirender
-Kapan dijalankan	Hanya saat data yang tergantung berubah	Setiap kali dipanggil
-Cocok untuk	Mengolah data tampilan yang bergantung pada data lain	Melakukan aksi atau fungsi interaktif
-Contoh	Menggabungkan nama, menghitung total harga	Menyimpan data, memanggil API, klik tombol
+| Aspek                | Computed Property                                     | Methods Property                           |
+| -------------------- | ----------------------------------------------------- | ------------------------------------------ |
+| **Sifat**            | Reaktif & memiliki cache                              | Dipanggil setiap kali dirender             |
+| **Kapan dijalankan** | Hanya saat data yang tergantung berubah               | Setiap kali dipanggil                      |
+| **Cocok untuk**      | Mengolah data tampilan yang bergantung pada data lain | Melakukan aksi atau fungsi interaktif      |
+| **Contoh**           | Menggabungkan nama, menghitung total harga            | Menyimpan data, memanggil API, klik tombol |
+
 📚 Contoh Gabungan computed dan methods
 ```bash
 <div id="app">
@@ -213,6 +217,7 @@ createApp({
 Saat mengetik di input, computed hanya dieksekusi jika datanya berubah.
 
 Sedangkan methods selalu dijalankan ulang setiap kali halaman dirender ulang.
+
 ---
 
 ### 🧭 Kesimpulan
