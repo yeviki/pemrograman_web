@@ -30,6 +30,8 @@ Repository ini berisi **materi TUWEB (Tutorial Web)** lengkap untuk mata kuliah 
 
 ---
 
+## 🧩 Vue 3 : Menampilkan Data & Pengandaian
+
 ## Cara menampilkan data di HTML dengan:
 
     Mustache ({{ }})
@@ -149,7 +151,7 @@ section {
     isStudent ? 'Mahasiswa Aktif' : 'Bukan Mahasiswa' → ekspresi ternary operator, untuk menampilkan hasil berbeda berdasarkan kondisi boolean.
     
     Semua variabel (name, age, isStudent) berada di dalam <script setup>
-
+---
 
 ### 🧩 2. Directive v-text & v-html
 
@@ -188,7 +190,7 @@ section {
     ⚠️ Hati-hati menggunakan v-html, karena jika datanya berasal dari user input bisa menyebabkan XSS attack (cross-site scripting).
     
     Keduanya adalah cara alternatif dari Mustache syntax jika kamu ingin kontrol penuh atas teks atau HTML di dalam elemen.
-
+---
 
 ### 🧩 3. Kondisi dengan v-if, v-else-if, v-else, dan v-show
 
@@ -248,6 +250,7 @@ select, button {
 | `v-else`    | Kondisi terakhir jika semua `false`               | Tidak memiliki ekspresi                       |
 | `v-show`    | Menyembunyikan elemen menggunakan `display: none` | Tidak menghapus dari DOM, hanya disembunyikan |
 
+---
 
 ### 🧩 4. Gabungkan Semuanya di App.vue
 
@@ -289,6 +292,7 @@ h1 {
 }
 </style>
 ```
+---
 
 ## 🧭 Menjalankan Proyek
 ```bash
