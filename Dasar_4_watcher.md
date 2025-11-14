@@ -199,7 +199,8 @@ watch(profile, (val) => {
 
 ### 🔍 1. watch(searchText, ...)
 
-Digunakan untuk memantau perubahan teks input:
+Digunakan untuk memantau perubahan teks input :
+Dipanggil setiap kali input berubah.
 ```bash
 watch(searchText, (newVal, oldVal) => {
   console.log(`Berubah dari ${oldVal} ke ${newVal}`)
@@ -208,7 +209,8 @@ watch(searchText, (newVal, oldVal) => {
 
 ### 🔍 2. watch(filteredItems, ...)
 
-Karena ini computed, Vue tetap bisa memantau output-nya:
+Karena ini computed, Vue tetap bisa memantau output-nya :
+Memantau hasil filter.
 ```bash
 watch(filteredItems, (newVal) => {
   console.log("Jumlah hasil:", newVal.length)
@@ -217,7 +219,8 @@ watch(filteredItems, (newVal) => {
 
 ### 🔍 3. watch object dengan deep: true
 
-Jika objek memiliki banyak level:
+Jika objek memiliki banyak level :
+Memantau perubahan hingga level paling dalam (nested object).
 ```bash
 watch(profile, (value) => {
   console.log("Profile berubah", value)
