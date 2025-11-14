@@ -69,6 +69,7 @@ Berisi kumpulan data berurutan (list)
 ```dash
 const buah = ["Apel", "Jeruk", "Mangga"]
 ```
+
 Ciri-ciri Array :
 
 - Index dimulai dari 0
@@ -90,6 +91,7 @@ const user = {
   online: false
 }
 ```
+
 Ciri-ciri Object :
 
 - Menampung data lebih terstruktur
@@ -114,7 +116,7 @@ Ciri-ciri Object :
 ## 🚀 2. CONTOH PROJECT VUE 3 (PRAKTIK)
 ### 🎯 Judul Project:
 
-“Daftar Produk & Detail User – Penerapan Array dan Object dalam Vue 3”
+### “Daftar Produk & Detail User – Penerapan Array dan Object dalam Vue 3”
 
 ## 🌟 Fitur Project
 
