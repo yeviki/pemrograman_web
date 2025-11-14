@@ -42,65 +42,77 @@ Disertai penjelasan konsep, contoh project lengkap, struktur folder, kode dengan
 
 Digunakan untuk angka
 Contoh:
-
+```dash
 const umur = 21
+```
+---
 
 ### 🔹 2. String
 
 Teks
-
+```dash
 const nama = "Yeviki"
+```
+---
 
 ### 🔹 3. Boolean
-
+```dash
 true / false
 
 const aktif = true
+```
+---
 
 ### 🔹 4. Array (PENTING)
 
 Berisi kumpulan data berurutan (list)
-
+```dash
 const buah = ["Apel", "Jeruk", "Mangga"]
+```
+Ciri-ciri Array :
 
-Ciri-ciri Array
+- Index dimulai dari 0
 
-Index dimulai dari 0
+- Isinya bisa campuran tipe data
 
-Isinya bisa campuran tipe data
+- Cocok untuk list data yang ingin ditampilkan dengan v-for
 
-Cocok untuk list data yang ingin ditampilkan dengan v-for
-
-Banyak method bawaan (push, map, filter, dll)
+- Banyak method bawaan (push, map, filter, dll)
+---
 
 ### 🔹 5. Object (PENTING)
 
 Berisi data dalam bentuk key:value
-
+```dash
 const user = {
   nama: "Yeviki",
   umur: 20,
   online: false
 }
+```
+Ciri-ciri Object :
 
-Ciri-ciri Object
+- Menampung data lebih terstruktur
 
-Menampung data lebih terstruktur
+- Bisa berisi object lain (nested object)
 
-Bisa berisi object lain (nested object)
+- Menggunakan key yang jelas
 
-Menggunakan key yang jelas
-
-Cocok untuk data satu entitas (misal profil user)
+- Cocok untuk data satu entitas (misal profil user)
+---
 
 ## 💡 Perbandingan Array vs Object
-Fitur	Array	Object
-Bentuk	List berurutan	Koleksi key:value
-Akses	array[0]	obj.nama
-Direkomendasikan untuk	Daftar data	Satu data lengkap
-Bisa di-loop?	Ya (v-for)	Ya (v-for objek)
-🚀 2. CONTOH PROJECT VUE 3 (PRAKTIK)
-🎯 Judul Project:
+| Fitur                  | Array          | Object             |
+| ---------------------- | -------------- | ------------------ |
+| Bentuk                 | List berurutan | Koleksi key:value  |
+| Akses                  | `array[0]`     | `obj.nama`         |
+| Direkomendasikan untuk | Daftar data    | Satu data lengkap  |
+| Bisa di-loop?          | Ya (`v-for`)   | Ya (`v-for` objek) |
+
+---
+
+## 🚀 2. CONTOH PROJECT VUE 3 (PRAKTIK)
+### 🎯 Judul Project:
 
 “Daftar Produk & Detail User – Penerapan Array dan Object dalam Vue 3”
 
@@ -113,30 +125,35 @@ Bisa di-loop?	Ya (v-for)	Ya (v-for objek)
 
 ## 🏗️ 3. LANGKAH-LANGKAH MEMBUAT PROJECT
 ### 1️⃣ Buat project Vue 3
+```dash
 npm create vue@latest
+```
 
+Pilih :
 
-Pilih:
+- Vue Router → optional (boleh No)
 
-Vue Router → optional (boleh No)
+- Pinia → optional
 
-Pinia → optional
-
-ESLint → optional
+- ESLint → optional
 
 Masuk folder:
-
+```dash
 cd nama-project
 npm install
 npm run dev
+```
 
-📁 4. STRUKTUR PROJECT
+### 📁 4. STRUKTUR PROJECT
+```dash
 src/
  ├─ App.vue
  └─ components/
       └─ DataDemo.vue
+```
 
 ### 🧩 5. KODE: App.vue (dengan penjelasan)
+```dash
 <template>
   <div class="container">
     <h1>Demo Tipe Data: Array & Object</h1>
@@ -158,8 +175,10 @@ import DataDemo from './components/DataDemo.vue'
   font-family: Arial;
 }
 </style>
+```
 
 ### 🧩 6. KODE: DataDemo.vue (KODE + PENJELASAN)
+```dash
 <template>
   <div>
 
@@ -263,36 +282,43 @@ ul {
   margin-top: 15px;
 }
 </style>
+```
 
 ## 📘 7. PENJELASAN PROJECT UNTUK MAHASISWA
 ### 🔵 Bagian Object
+```dash
 const user = ref({
   name: "Yeviki",
   age: 21,
   online: true
 })
-
+```
 
 Object cocok untuk menyimpan data terstruktur satu entitas (user).
 
 ### 🔵 Bagian Array
+```dash
 const products = ref(["Laptop", "Mouse", "Keyboard"])
-
+```
 
 Array cocok untuk daftar data yang dapat di-loop menggunakan v-for.
 
 ### 🔵 Menambah item ke Array
+```dash
 products.value.push(newProduct.value)
+```
 
 ### 🔵 Watcher untuk memantau perubahan Array
+```dash
 watch(products, (newVal) => {
   console.log("Produk terbaru:", newVal)
 }, { deep: true })
+```
 
 ## 🎉 8. HASIL AKHIR PROJECT
 
-✔ Menampilkan object user
-✔ Menampilkan list produk dari array
-✔ Bisa menambah item baru
-✔ Watcher menampilkan log perubahan
-✔ Cocok untuk praktikum mahasiswa
+- ✔ Menampilkan object user
+- ✔ Menampilkan list produk dari array
+- ✔ Bisa menambah item baru
+- ✔ Watcher menampilkan log perubahan
+- ✔ Cocok untuk praktikum mahasiswa
