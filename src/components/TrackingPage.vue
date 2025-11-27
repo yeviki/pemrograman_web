@@ -100,6 +100,7 @@
                 <th>Paket</th>
                 <th>Tanggal Kirim</th>
                 <th>Total Harga</th>
+                <th>Aksi</th>
               </tr>
             </thead>
 
@@ -112,9 +113,83 @@
                 <td>{{ d.paket }} — {{ paketByKode(d.paket)?.nama }}</td>
                 <td>{{ d.tanggalKirim || '-' }}</td>
                 <td>Rp {{ formatNumber(paketByKode(d.paket)?.harga || 0) }}</td>
+
+                <td>
+                  <button class="btn btn-sm btn-info me-1" @click="openTracking(d.nomor)">
+                    <i class="bi bi-eye"></i> Tracking
+                  </button>
+
+                  <button class="btn btn-sm btn-success" @click="openAddTracking(d.nomor)">
+                    <i class="bi bi-plus-circle"></i> Tambah Tracking
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LIHAT TRACKING -->
+  <div class="modal fade" id="modalTracking" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">Tracking: {{ selectedTracking?.nomor }}</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <p><strong>Status:</strong> {{ selectedTracking?.data.status }}</p>
+          <p><strong>Ekspedisi:</strong> {{ selectedTracking?.data.ekspedisi }}</p>
+
+          <h6 class="fw-bold mt-3">Riwayat Perjalanan:</h6>
+
+          <ul class="list-group">
+            <li
+              class="list-group-item"
+              v-for="(item, idx) in selectedTracking?.data.perjalanan"
+              :key="idx"
+            >
+              <strong>{{ item.waktu }}</strong
+              ><br />
+              {{ item.keterangan }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: TAMBAH TRACKING -->
+  <div class="modal fade" id="modalAddTracking" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Tambah Tracking DO: {{ addTrackDoNumber }}</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Waktu</label>
+            <input type="datetime-local" v-model="trackingForm.waktu" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Keterangan</label>
+            <textarea v-model="trackingForm.keterangan" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button class="btn btn-primary" @click="saveTracking">Simpan Tracking</button>
         </div>
       </div>
     </div>
@@ -124,6 +199,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
 import dataBahanAjar from '../data/dataBahanAjar.js'
+import { Modal } from 'bootstrap'
 
 const paketList = ref(dataBahanAjar.paket)
 const trackingData = reactive(dataBahanAjar.tracking)
@@ -206,6 +282,53 @@ onMounted(() => {
     })
   }
 })
+
+const selectedTracking = ref(null)
+const addTrackDoNumber = ref('')
+let modalTracking = null
+let modalAddTracking = null
+
+const trackingForm = reactive({
+  waktu: '',
+  keterangan: '',
+})
+
+const openTracking = (nomor) => {
+  selectedTracking.value = {
+    nomor,
+    data: trackingData[nomor],
+  }
+
+  if (!modalTracking) modalTracking = new Modal(document.getElementById('modalTracking'))
+
+  modalTracking.show()
+}
+
+const openAddTracking = (nomor) => {
+  addTrackDoNumber.value = nomor
+
+  trackingForm.waktu = ''
+  trackingForm.keterangan = ''
+
+  if (!modalAddTracking) modalAddTracking = new Modal(document.getElementById('modalAddTracking'))
+
+  modalAddTracking.show()
+}
+
+const saveTracking = () => {
+  if (!trackingForm.waktu || !trackingForm.keterangan) {
+    alert('Lengkapi semua data tracking!')
+    return
+  }
+
+  trackingData[addTrackDoNumber.value].perjalanan.push({
+    waktu: trackingForm.waktu,
+    keterangan: trackingForm.keterangan,
+  })
+
+  modalAddTracking.hide()
+  alert('Tracking baru berhasil ditambahkan!')
+}
 </script>
 
 <style scoped></style>
