@@ -38,6 +38,43 @@ Backend: Node.js + Express + MySQL
 
 Frontend: Vue 3 + Axios
 
+📁 STRUKTUR FOLDER PROJECT
+```
+project-koneksi-vue/
+│
+├── api-server/             # Backend Node.js (Express + MySQL)
+│   ├── node_modules/
+│   ├── server.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env                # (opsional, jika ingin pisahkan konfigurasi DB)
+│
+└── vue-client/             # Frontend Vue 3 + Axios
+    ├── node_modules/
+    ├── public/
+    │   └── favicon.ico
+    │
+    ├── src/
+    │   ├── api/
+    │   │   └── axios.js    # konfigurasi Axios
+    │   │
+    │   ├── assets/
+    │   │   └── ...         # file CSS / gambar
+    │   │
+    │   ├── components/
+    │   │   └── UsersTable.vue
+    │   │
+    │   ├── App.vue
+    │   └── main.js
+    │
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    ├── package-lock.json
+    └── README.md
+```
+
+
 Fitur:
 
 Koneksi database MySQL
